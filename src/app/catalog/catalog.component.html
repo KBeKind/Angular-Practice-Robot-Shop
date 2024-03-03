@@ -21,7 +21,14 @@
           </div>
         </div>
         <div class="price">
-          <div *ngIf="product.discount === 0">
+          <div
+            style="font-weight: bolder"
+            [ngStyle]="{ color: product.discount > 0 ? 'green' : '' }"
+            [ngClass]="getDiscountedClasses(product)"
+          >
+            <!-- <div [ngClass]="{ strikethrough: product.discount > 0 }"> -->
+            <!-- <div [class.strikethrough]="product.discount > 0" > -->
+
             {{ product.price | currency : "USD" }}
           </div>
           <div class="discount" *ngIf="product.discount > 0">
