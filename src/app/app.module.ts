@@ -9,9 +9,8 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
-import { SignInComponent } from './user/sign-in/sign-in.component';
 import { AppRoutingModule } from './app-routing.module';
-import { TemplateFormControlsComponent } from './user/template-form-controls/template-form-controls.component';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -21,10 +20,14 @@ import { TemplateFormControlsComponent } from './user/template-form-controls/tem
     SiteHeaderComponent,
     ProductDetailsComponent,
     CartComponent,
-    SignInComponent,
-    TemplateFormControlsComponent,
   ],
-  imports: [FormsModule, BrowserModule, HttpClientModule, AppRoutingModule],
+  imports: [
+    FormsModule,
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    UserModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
